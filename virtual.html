@@ -3,13 +3,23 @@
 		<title>Virtual Reality</title>
 		<script src="aframe.min.js"></script>
 		<script>
-			AFRAME.registerComponent('rayscaster-autorefresh', { init: function () {
-				var el = this.el;
-				this.el.addEventListener('model-loaded', function () {
-					var cursorEl = el.querySelector('[raycaster]');
-					cursorEl.components.raycaster.refresObjects();
-				});
-			});
+    
+   /* An aframe component is either an element like <a-scene> or
+       an attribute on a component like <a-scene raycaster-autorefresh>
+       the raycaster-autorefresh component is needed for selecting objects
+       by looking at them (fusing). this uses a simulated ray to see what
+       object the user is looking at.
+    */
+    AFRAME.registerComponent('raycaster-autorefresh', {
+      init: function () {
+        var el = this.el;
+        this.el.addEventListener('model-loaded', function () {
+          var cursorEl = el.querySelector('[raycaster]');
+          cursorEl.components.raycaster.refreshObjects();
+        });
+      }
+    });
+
 		</script>	
 	</head>
 
