@@ -3,7 +3,7 @@
 		<title>Virtual Reality</title>
 		<script src="aframe.min.js"></script>
 		<script>
-    
+
    /* An aframe component is either an element like <a-scene> or
        an attribute on a component like <a-scene raycaster-autorefresh>
        the raycaster-autorefresh component is needed for selecting objects
@@ -32,6 +32,8 @@
         <a-asset-item id="wall" src="resources/wall.gltf"></a-asset-item>
         <img id="carpet" src="resources/carpet.jpg">
         <a-asset-item id="sofa" src="resources/burlap_sofa.gltf"></a-asset-item>
+        <a-gltf-model scale="1.7 1.7 1.7" position="x 1.5 z" rotation="0 -180 0" src="#door" door-listener fusable clickable shadow></a-gltf-model> 
+
       </a-assets>
 <!-- ===== END NEW CODE ===== -->
 
